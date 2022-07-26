@@ -85,7 +85,7 @@ export function Login({ signInUser }: Props) {
             </form>
 
             <span className="text-sm text-silver-500 text-center">
-                Não tem conta? <a href="" className="text-birdBlue-500"> Inscreva-se</a>
+                Não tem conta? <a href="/signup" className="text-birdBlue-500"> Inscreva-se.</a>
             </span>
 
         </div>

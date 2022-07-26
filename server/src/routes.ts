@@ -70,11 +70,20 @@ router.post("/signup", async (ctx) => {
       },
     });
 
+    const accessToken = jwt.sign(
+      {
+        sub: ctx.request.body.id,
+      },
+      process.env.VITE_JWT_SECRET as string,
+      { expiresIn: "24h" }
+    );
+
     ctx.body = {
       id: ctx.request.body.id,
       name: ctx.request.body.name,
       username: ctx.request.body.username,
       email: ctx.request.body.email,
+      accessToken
     };
   } catch (error) {
     if (error instanceof Error) {
