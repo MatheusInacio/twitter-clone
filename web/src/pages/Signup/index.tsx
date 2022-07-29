@@ -30,7 +30,7 @@ export function Signup({ signInUser }: Props) {
             username: ''
         },
         onSubmit: async values => {
-            const res = await axios.post('http://localhost:3333/signup', {
+            const res = await axios.post(`${import.meta.env.VITE_API_HOST}/signup`, {
                 email: values.email,
                 password: values.password,
                 name: values.name,
